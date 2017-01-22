@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, Image, View, Platform } from 'react-native'
 import { Images } from '../Themes'
 import RoundedButton from '../Components/RoundedButton'
 import { Actions as NavigationActions } from 'react-native-router-flux'
@@ -10,6 +10,16 @@ import { Actions as NavigationActions } from 'react-native-router-flux'
 import styles from './Styles/PresentationScreenStyle'
 
 export default class PresentationScreen extends React.Component {
+
+  static propTypes = {
+    platformName: React.PropTypes.string
+  }
+
+  constructor () {
+    super()
+    this.platformName = `吾系雷${Platform.OS}，识不识得喇？`
+  }
+
   render () {
     return (
       <View style={styles.mainContainer}>
@@ -25,6 +35,10 @@ export default class PresentationScreen extends React.Component {
               are available below.
             </Text>
           </View>
+
+          <RoundedButton>
+            {this.platformName}
+          </RoundedButton>
 
           <RoundedButton onPress={NavigationActions.componentExamples}>
             Component Examples Screen
