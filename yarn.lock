@@ -5337,6 +5337,10 @@ react-native-animatable@^0.6.0:
   version "0.6.1"
   resolved "https://registry.npmjs.org/react-native-animatable/-/react-native-animatable-0.6.1.tgz#bd85023d42ad0ceb3cc98d7b490f7d6dd6ba11b0"
 
+react-native-camera@0.4:
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/react-native-camera/-/react-native-camera-0.4.1.tgz#b8d24bd2e0b7f9d93fd4f2b7e6ef15fdeb886391"
+
 react-native-config@^0.1.2:
   version "0.1.2"
   resolved "https://registry.npmjs.org/react-native-config/-/react-native-config-0.1.2.tgz#cf6e3e312845f411fe9ef42f3ea283c576078681"

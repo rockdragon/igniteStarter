@@ -4,15 +4,15 @@ import { Images } from '../Themes'
 import styles from './Styles/Splash'
 import RoundedButton from '../Components/RoundedButton'
 
-const { ScrollView, Image, View, DatePickerAndroid,  } = ReactNative
+const { ScrollView, Image, View, DatePickerAndroid } = ReactNative
 
 export default class Splash extends React.Component {
-  takePhoto() {
+  async pickDate () {
     try {
       const {action, year, month, day} = await DatePickerAndroid.open({
         // Use `new Date()` for current date.
         // May 25 2020. Month 0 is January.
-        date: new Date(2020, 4, 25)
+        date: new Date(year, month, day)
       })
       if (action !== DatePickerAndroid.dismissedAction) {
         // Selected year, month (0-11), day
@@ -27,8 +27,8 @@ export default class Splash extends React.Component {
       <View style={styles.mainContainer}>
         <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
         <ScrollView style={styles.container}>
-          <RoundedButton onPress={this.takePhoto}>
-            拍照
+          <RoundedButton onPress={this.pickDate}>
+            选时间
           </RoundedButton>
         </ScrollView>
       </View>
