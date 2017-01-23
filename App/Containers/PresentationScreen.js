@@ -36,7 +36,7 @@ export default class PresentationScreen extends React.Component {
             </Text>
           </View>
 
-          <RoundedButton>
+          <RoundedButton onPress={NavigationActions.splash}>
             {this.platformName}
           </RoundedButton>
 
